@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b63hw1bawo0ei"
+path="res://.godot/imported/audio-bounce.ogg-698dd8509e35c348139ff3c946b893f3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets pong/audio-bounce.ogg"
+dest_files=["res://.godot/imported/audio-bounce.ogg-698dd8509e35c348139ff3c946b893f3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

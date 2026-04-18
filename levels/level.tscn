@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ht1x53j78b7j"]
 
+[ext_resource type="Script" uid="uid://buwtcyx4kkx2r" path="res://levels/level.gd" id="1_5mrsh"]
 [ext_resource type="PackedScene" uid="uid://dacaoti5pspc7" path="res://characters/player.tscn" id="1_80vhd"]
+[ext_resource type="Script" uid="uid://cbwtbwbiwevg5" path="res://characters/oponente.gd" id="2_cwqvt"]
+[ext_resource type="PackedScene" uid="uid://nsdrbua1xkkp" path="res://characters/ball.tscn" id="2_hjsbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xgho"]
 size = Vector2(1920, 50)
@@ -8,7 +11,39 @@ size = Vector2(1920, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
 size = Vector2(50, 1080)
 
+[sub_resource type="FontFile" id="FontFile_5mrsh"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+
 [node name="Level" type="Node2D" unique_id=772517460]
+script = ExtResource("1_5mrsh")
 
 [node name="ParedSuperior" type="StaticBody2D" parent="." unique_id=1305385513]
 
@@ -36,3 +71,25 @@ shape = SubResource("RectangleShape2D_u52ul")
 
 [node name="Player" parent="." unique_id=1980761694 instance=ExtResource("1_80vhd")]
 position = Vector2(20, 460)
+motion_mode = 1
+
+[node name="Oponente" parent="." unique_id=406978772 instance=ExtResource("1_80vhd")]
+position = Vector2(1880, 460)
+motion_mode = 1
+script = ExtResource("2_cwqvt")
+
+[node name="Ball" parent="." unique_id=1468082482 instance=ExtResource("2_hjsbj")]
+position = Vector2(940, 520)
+
+[node name="MarcadorPlayer" type="Label" parent="." unique_id=1057279618]
+offset_right = 1920.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(1, 1, 0.26666668, 1)
+theme_override_fonts/font = SubResource("FontFile_5mrsh")
+theme_override_font_sizes/font_size = 32
+text = "Marcador Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="ArcoPlayer" to="." method="_on_arco_player_body_entered"]
+[connection signal="body_entered" from="ArcoOponente" to="." method="_on_arco_oponente_body_entered"]

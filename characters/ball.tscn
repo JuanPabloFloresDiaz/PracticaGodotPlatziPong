@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://nsdrbua1xkkp"]
+
+[ext_resource type="Texture2D" uid="uid://b14kb3o55s2h0" path="res://characters/pelota_futbol.png" id="1_2sslr"]
+[ext_resource type="Script" uid="uid://cyxvkr4630whx" path="res://characters/ball.gd" id="1_yadwx"]
+[ext_resource type="AudioStream" uid="uid://b63hw1bawo0ei" path="res://assets pong/audio-bounce.ogg" id="3_p8ead"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yadwx"]
+radius = 185.0
+
+[node name="Ball" type="CharacterBody2D" unique_id=1468082482]
+script = ExtResource("1_yadwx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1465284682]
+texture = ExtResource("1_2sslr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=454094404]
+shape = SubResource("CircleShape2D_yadwx")
+
+[node name="AudioColision" type="AudioStreamPlayer2D" parent="." unique_id=767425740]
+stream = ExtResource("3_p8ead")
