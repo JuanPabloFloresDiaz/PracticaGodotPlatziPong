@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ht1x53j78b7j"]
+
+[ext_resource type="PackedScene" uid="uid://dacaoti5pspc7" path="res://characters/player.tscn" id="1_80vhd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xgho"]
+size = Vector2(1920, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u52ul"]
+size = Vector2(50, 1080)
+
+[node name="Level" type="Node2D" unique_id=772517460]
+
+[node name="ParedSuperior" type="StaticBody2D" parent="." unique_id=1305385513]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedSuperior" unique_id=999619413]
+position = Vector2(960, -25)
+shape = SubResource("RectangleShape2D_5xgho")
+
+[node name="ParedInferior" type="StaticBody2D" parent="." unique_id=1813428458]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedInferior" unique_id=378131369]
+position = Vector2(960, 1105)
+shape = SubResource("RectangleShape2D_5xgho")
+
+[node name="ArcoPlayer" type="Area2D" parent="." unique_id=1745035492]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArcoPlayer" unique_id=1092963469]
+position = Vector2(-25, 540)
+shape = SubResource("RectangleShape2D_u52ul")
+
+[node name="ArcoOponente" type="Area2D" parent="." unique_id=444566263]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArcoOponente" unique_id=209582043]
+position = Vector2(1945, 540)
+shape = SubResource("RectangleShape2D_u52ul")
+
+[node name="Player" parent="." unique_id=1980761694 instance=ExtResource("1_80vhd")]
+position = Vector2(20, 460)
