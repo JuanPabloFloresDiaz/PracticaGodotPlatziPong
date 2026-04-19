@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="platzipong"
+config/name="Platzi Pong"
 run/main_scene="uid://ht1x53j78b7j"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://b14kb3o55s2h0"
 
 [display]
 
